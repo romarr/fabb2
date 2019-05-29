@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+{% include head.html %}
+
+<body>
+    {%- include header.html -%}
+    {{content}}
+</body>
+
+
+<script src="{{"/js/jquery.min.js" | prepend: site.baseurl}}"></script>
+<script src="{{"/js/bootstrap.min.js" | prepend: site.baseurl}}"></script>
+</html>

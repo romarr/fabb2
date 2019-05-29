@@ -1,0 +1,61 @@
+# Site settings
+title: Fab B.
+email: contact@fab-b.fr
+permalink: /:categories/:title.html
+description: > # this means to ignore newlines until "baseurl:"
+  Les vidéos que vous trouverez ici sont faites dans le but de vous montrer que beaucoup de choses sont accessible à tous à condition d'oser se "salir" les mains. En suivant mes vidéos vous apprendrez des bases en mécanique ce qui vous permettra de faire des économies sur l'entretien de vos véhicules.
+
+insta: https://www.instagram.com/fab_b_youtube/
+youtube: https://www.youtube.com/channel/UCkqQ7ktU06DL8xqiqHdI2rw
+
+baseurl: "/fabb" # the subpath of your site, e.g. /blog
+url: "https://romarr.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+l18n:
+  fr:
+    profile: "Mon compte"
+    cart: "Panier"
+    links: "Liens"
+    terms: Conditions
+    termsurl: apropos
+    contact: Contact
+    contacturl: contact
+    description: > # this means to ignore newlines until "baseurl:"
+      Un Silicolight est un cache ampoule ou filtre de couleur en silicone pour lampes basse consommation ou LED.
+  en:
+    profile: "Profile"
+    cart: "Cart"
+    links: "Links"
+    terms: Terms
+    termsurl: about
+    contact: Contact
+    contacturl: about
+    description: > # this means to ignore newlines until "baseurl:"
+      Silicolight is a color silicone cover for low-energy and led lights. Silicolight is made from flexible translucent silicone.
+
+# Gems et extensions
+plugins:
+- jekyll-feed
+- jekyll-sitemap
+- jekyll-paginate
+exclude:
+- Dockerfile
+
+collections_dir: collections
+
+collections:
+  produits:
+  products:
+  blogen:
+    output: true
+    permalink: /blog/en/:title
+  blogfr:
+    output: true
+    permalink: /blog/fr/:title
+  
+sass:
+  sass_dir: css
+  style: compressed

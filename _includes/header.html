@@ -1,0 +1,45 @@
+<section class="top-header">
+
+</section>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02"
+            aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                    {%- assign sorted = site.pages | sort: 'index' -%}
+                    {%- for item in sorted -%}
+                    {%- if item.menu == 'main' and page.lang == item.lang -%}
+                    <li class="nav-item{%if item.title == page.title %} active{%endif%}">
+                        <a class="nav-link" href="{{item.url | prepend: site.baseurl }}">{{item.title}} <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    {%- endif -%}
+                    {%- endfor -%}
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Dossiers
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            {%- assign sorted = site.pages | sort: 'index' -%}
+                            {%- for item in sorted -%}
+                            {%- if item.menu == 'articles' and page.lang == item.lang -%}
+                              <a class="dropdown-item" href="{{item.url | prepend: site.baseurl }}">{{item.title}}</a>
+                            {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+
+                          </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
