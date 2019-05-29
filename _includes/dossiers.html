@@ -1,0 +1,13 @@
+{%- for dossier in site.data.dossiers -%}
+<div class="col px-1">
+    <div class="card bg-secondary mb-3">
+        <div class="card-header">{{dossier.title}}</div>
+        <img src="https://img.youtube.com/vi/{{dossier.id}}/mqdefault.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title">{{dossier.category}} - {{dossier.subcategory}}</h4>
+            <p class="card-text">{{dossier.tags}}</p>
+        </div>
+    </div>
+</div>
+{%- endfor -%}
+

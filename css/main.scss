@@ -11,7 +11,21 @@
 
 .top-header {
     height: 200px;
-    background-image: url({{ "/img/bg.jpg" | prepend: site.baseurl }});
+    background-image: url({{"/img/bg.jpg" | prepend: site.baseurl}});
     background-size: cover;
 }
 
+.video-item {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+.video-cap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
