@@ -1,0 +1,14 @@
+<div class="card-group">
+    {%- for comparatif in site.data.comparatifs -%}
+
+    <div class="card text-white bg-primary mb-3">
+            <img src="https://img.youtube.com/vi/{{comparatif.id}}/mqdefault.jpg" class="card-img-top" alt="...">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h4 class="card-title">{{comparatif.title}}</h4>
+            <p class="card-text">{{comparatif.tags}}</p>
+        </div>
+    </div>
+
+    {%- endfor -%}
+</div>

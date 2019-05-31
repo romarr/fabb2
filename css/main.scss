@@ -15,6 +15,20 @@
     background-size: cover;
 }
 
+.card-img-background {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: 0.5s;
+}
+
+.card-img-background:hover {
+    background-color: transparent;
+}
+
+.dossier-img {
+    width: 100%;
+    object-fit: cover;
+}
+
 .video-item {
     position: relative;
     text-align: center;
