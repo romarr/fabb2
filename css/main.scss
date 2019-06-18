@@ -9,10 +9,19 @@
 @import 'fontawesome/brands';
 @import 'fontawesome/regular';
 
+body {
+    background-image: url({{"/img/hex2x.png" | prepend: site.baseurl}});
+}
+
+#home-page {
+    background-color: $white;
+}
+
 .top-header {
     height: 200px;
-    background-image: url({{"/img/bg.jpg" | prepend: site.baseurl}});
     background-size: cover;
+    background-position: center;
+    background-image: url({{"/img/bg.jpg" | prepend: site.baseurl}});
 }
 
 .card-img-background {
@@ -33,6 +42,10 @@
     position: relative;
     text-align: center;
     color: white;
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
   }
 
 .video-cap {

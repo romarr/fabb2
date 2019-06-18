@@ -7,19 +7,15 @@ lang: fr
 ref: home
 ---
 
-<div id="homage-page" class="container">
+<div id="home-page" class="container px-4 pt-4">
     <div class="row">
-        <div class="col-12">
-            filtres
-        </div>
         <div class="col-9">
-            <h3>Articles</h3>
             <div class="row mr-1">
                 {%- include dossiers.html -%}
             </div>
         </div>
         <div class="col-3 shadow px-2 mb-3 bg-dark">
-            <h3 class="text-white">Vidéos</h3>
+            <h4 class="text-white text-center my-1">Vidéos</h4>
             {%- include videos.html -%}
         </div>
         <div class="col-4">

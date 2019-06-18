@@ -14,28 +14,6 @@ url: "https://romarr.github.io" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 
-l18n:
-  fr:
-    profile: "Mon compte"
-    cart: "Panier"
-    links: "Liens"
-    terms: Conditions
-    termsurl: apropos
-    contact: Contact
-    contacturl: contact
-    description: > # this means to ignore newlines until "baseurl:"
-      Un Silicolight est un cache ampoule ou filtre de couleur en silicone pour lampes basse consommation ou LED.
-  en:
-    profile: "Profile"
-    cart: "Cart"
-    links: "Links"
-    terms: Terms
-    termsurl: about
-    contact: Contact
-    contacturl: about
-    description: > # this means to ignore newlines until "baseurl:"
-      Silicolight is a color silicone cover for low-energy and led lights. Silicolight is made from flexible translucent silicone.
-
 # Gems et extensions
 plugins:
 - jekyll-feed
@@ -47,14 +25,13 @@ exclude:
 collections_dir: collections
 
 collections:
-  produits:
-  products:
-  blogen:
+  articles:
     output: true
-    permalink: /blog/en/:title
-  blogfr:
+    permalink: /articles/:title
+  comparatifs:
     output: true
-    permalink: /blog/fr/:title
+    permalink: /comparatifs/:title
+  videos:
   
 sass:
   sass_dir: css
