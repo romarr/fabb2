@@ -1,12 +1,14 @@
-<div class="card-group">
-    {%- for comparatif in site.data.comparatifs -%}
-    <div class="card text-white bg-primary mb-3">
-        <img src="https://img.youtube.com/vi/{{comparatif.id}}/mqdefault.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{comparatif.title}}</h5>
-            <p class="card-text">{{comparatif.subtitle}}</p>
-            <a href="{{comparatif.url}}" class="btn btn-secondary stretched-link">Lire</a>
+<div class="row">
+    <div class="card-group">
+        {%- for comparatif in site.comparatifs -%}
+        <div class="card text-white bg-primary mb-3">
+            <img src="https://img.youtube.com/vi/{{comparatif.id}}/mqdefault.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{comparatif.title}}</h5>
+                <p class="card-text">{{comparatif.subtitle}}</p>
+                <a href="{{comparatif.url}}" class="btn btn-secondary stretched-link">Lire</a>
+            </div>
         </div>
+        {%- endfor -%}
     </div>
-    {%- endfor -%}
 </div>

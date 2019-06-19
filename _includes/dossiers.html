@@ -1,18 +1,37 @@
-{%- for dossier in site.data.dossiers -%}
-<div class="col-6 mx-0 px-0">
-        <div class="video-item mb-2">
-                <a href="#" class="stretched-link">
-                <img src="https://img.youtube.com/vi/{{dossier.id}}/mqdefault.jpg" class="img-fluid" alt="...">
-                </a>
-                <div class="video-cap">
-                    <p class="mb-1">
-                    {%- assign tags = dossier.tags | split: "," -%}
-                        {% for tag in tags %}
-                        <span class="badge badge-secondary">{{tag}}</span>
-                        {% endfor %}
-                    </p>                        
-                    <h5 class="text-white">{{dossier.title}}</h5>
-                </div>
-        </div>
+{%- for dossier in site.data.dossiers | limit: 3 -%}
+{%- if forloop.first -%}
+<div class="col-12 mx-0 px-0">
+    <div class="video-item mb-2">
+            <a href="#" class="stretched-link">
+            <img src="https://img.youtube.com/vi/{{dossier.id}}/mqdefault.jpg" class="img-fluid" alt="...">
+            </a>
+            <div class="video-cap">
+                <p class="mb-1">
+                {%- assign tags = dossier.tags | split: "," -%}
+                    {% for tag in tags %}
+                    <span class="badge badge-secondary">{{tag}}</span>
+                    {% endfor %}
+                </p>                        
+                <h5 class="text-white">{{dossier.title}}</h5>
+            </div>
+    </div>
 </div>
+{%- else -%}
+<div class="col-6 mx-0 px-0">
+    <div class="video-item mb-2">
+            <a href="#" class="stretched-link">
+            <img src="https://img.youtube.com/vi/{{dossier.id}}/mqdefault.jpg" class="img-fluid" alt="...">
+            </a>
+            <div class="video-cap">
+                <p class="mb-1">
+                {%- assign tags = dossier.tags | split: "," -%}
+                    {% for tag in tags %}
+                    <span class="badge badge-secondary">{{tag}}</span>
+                    {% endfor %}
+                </p>                        
+                <h6 class="text-white">{{dossier.title}}</h6>
+            </div>
+    </div>
+</div>
+{%- endif -%}
 {%- endfor -%}

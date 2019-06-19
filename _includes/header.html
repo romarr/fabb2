@@ -13,7 +13,7 @@
             <ul class="navbar-nav mr-auto">
                     {%- assign sorted = site.pages | sort: 'index' -%}
                     {%- for item in sorted -%}
-                    {%- if item.menu == 'main' and page.lang == item.lang -%}
+                    {%- if item.menu == 'main' -%}
                     <li class="nav-item{%if item.title == page.title %} active{%endif%}">
                         <a class="nav-link" href="{{item.url | prepend: site.baseurl }}">{{item.title}} <span
                                 class="sr-only">(current)</span></a>
@@ -28,7 +28,7 @@
 
                             {%- assign sorted = site.pages | sort: 'index' -%}
                             {%- for item in sorted -%}
-                            {%- if item.menu == 'articles' and page.lang == item.lang -%}
+                            {%- if item.menu == 'articles' -%}
                               <a class="dropdown-item" href="{{item.url | prepend: site.baseurl }}">{{item.title}}</a>
                             {%- endif -%}
                             {%- endfor -%}
