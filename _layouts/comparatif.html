@@ -4,8 +4,71 @@ layout: default
 
 <div id="page" class="container px-4 pt-4">
     <div class="row">
+        <div class="col-12">
+            {{content}}
+        </div>
         <div class="col">
-            Test
+            <h5>Récap</h5>
+            <table class="table table-sm table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        {%- for produit in page.produits -%}
+                        <th scope="col">{{produit.nom}}</th>
+                        {%- endfor -%}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Prix</th>
+                        {%- for produit in page.produits -%}
+                        <td>{{produit.prix}}</td>
+                        {%- endfor -%}
+                    </tr>
+                    <tr>
+                        <th scope="row">+</th>
+                        {%- for produit in page.produits -%}
+                        <td>{{produit.positifs}}</td>
+                        {%- endfor -%}
+                    </tr>
+                    <tr>
+                        <th scope="row">-</th>
+                        {%- for produit in page.produits -%}
+                        <td>
+                            <ul class="list-unstyled">
+                                {% assign items = produit.negatifs | split: ", " %}
+                                {%- for item in items -%}
+                                <li>{{item}}</li>
+                                {%- endfor -%}
+                            </ul>
+                        </td>
+                        {%- endfor -%}
+                    </tr>
+                    <tr>
+                        <th scope="row">Note</th>
+                        {%- for produit in page.produits -%}
+                        <td>{{produit.note}}</td>
+                        {%- endfor -%}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3">
+            <h5>Liens</h5>
+            <div class="list-group">
+                {%- for produit in page.produits -%}
+                <a href="{{produit.lien}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{produit.nom}}</h5>
+                        <small>{{produit.prix}}</small>
+                    </div>
+                    <p class="mb-1">Acheter chez ...</p>
+                    {%- if produit.affiliation -%}
+                    <small>Lien sponsorisé</small>
+                    {%- endif -%}
+                </a>
+                {%- endfor -%}
+            </div>
         </div>
     </div>
 </div>
