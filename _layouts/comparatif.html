@@ -20,19 +20,26 @@ layout: default
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">Prix</th>
+                        <th scope="row"><i class="fas fa-euro-sign"></i></th>
                         {%- for produit in page.produits -%}
                         <td>{{produit.prix}}</td>
                         {%- endfor -%}
                     </tr>
                     <tr>
-                        <th scope="row">+</th>
+                        <th scope="row"><i class="fas fa-plus"></i></th>
                         {%- for produit in page.produits -%}
-                        <td>{{produit.positifs}}</td>
+                        <td>
+                            <ul class="list-unstyled">
+                                {% assign items = produit.positifs | split: ", " %}
+                                {%- for item in items -%}
+                                <li>{{item}}</li>
+                                {%- endfor -%}
+                            </ul>
+                        </td>
                         {%- endfor -%}
                     </tr>
                     <tr>
-                        <th scope="row">-</th>
+                        <th scope="row"><i class="fas fa-minus"></i></th>
                         {%- for produit in page.produits -%}
                         <td>
                             <ul class="list-unstyled">
@@ -45,7 +52,7 @@ layout: default
                         {%- endfor -%}
                     </tr>
                     <tr>
-                        <th scope="row">Note</th>
+                        <th scope="row"><i class="fas fa-star"></i></th>
                         {%- for produit in page.produits -%}
                         <td>{{produit.note}}</td>
                         {%- endfor -%}
