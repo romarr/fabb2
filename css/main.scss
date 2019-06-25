@@ -17,6 +17,11 @@ body {
     background-color: $white;
 }
 
+.card-img-max {
+    max-height: 8rem;
+    object-fit: cover;
+}
+
 .top-header {
     height: 200px;
     background-size: cover;

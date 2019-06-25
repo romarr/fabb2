@@ -25,6 +25,9 @@ exclude:
 collections_dir: collections
 
 collections:
+  dossiers:
+    output: true
+    permalink: /articles/:title
   articles:
     output: true
     permalink: /articles/:title

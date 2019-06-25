@@ -10,12 +10,14 @@ ref: home
 <div id="page" class="container px-4 pt-4">
     <div class="row justify-content-around">
         <div class="col-6">
-            <div class="row mr-1">
+            <h3 class="bg-warning text-white">Dossiers</h3>
+            <div class="row">
                 {%- include dossiers.html -%}
             </div>
+            <p class="text-right"><a href="#">Tous les dossiers <i class="fas fa-arrow-circle-right"></i></a></p>
         </div>
         <div class="col-3">
-            <h3 class="bg-info text-white">Blog</h3>
+            <h3 class="bg-warning text-white">Blog</h3>
             {%- include blog.html -%}
             <hr>
         </div>
@@ -23,13 +25,13 @@ ref: home
             <h4 class="text-white text-center my-1">Vidéos</h4>
             {%- include videos.html -%}
         </div>
-        <div class="col-8">
-            <h3 class="bg-danger text-white">Comparatifs</h3>
+        <div class="col-9">
+            <h3 class="bg-warning text-white">Comparatifs</h3>
             {%- include comparatifs.html -%}
         </div>
-        <div class="col-4">
-            <h3 class="bg-warning text-white">Bons plans</h3>
-            {%- include blog.html -%}
+        <div class="col-3">
+            <h3 class="bg-info text-white">Bons plans</h3>
+            {%- include deals.html -%}
         </div>
 
     </div>

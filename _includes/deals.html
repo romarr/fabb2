@@ -1,0 +1,17 @@
+{%- for deal in site.data.deals -%}
+<div class="media">
+    <a href="{{deal.url}}">
+    <img src="{{deal.img}}" class="align-self-start mr-2" alt="{{deal.title}}">
+    </a>
+    <div class="media-body">
+        <a href="{{deal.url}}">
+            <h5 class="mt-0">{{deal.title}}
+                <span class="badge badge-pill badge-info">{{deal.prix}} €</span>
+            </h5>
+        </a>
+
+        <p>{{deal.description}}</p>
+    </div>
+</div>
+{%- endfor -%}
+<p class="text-right"><a href="#">Tous les bons plans <i class="fas fa-arrow-circle-right"></i></a></p>

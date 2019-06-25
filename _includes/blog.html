@@ -1,4 +1,10 @@
 {%- for article in site.data.blog -%}
     <a href="{{article.url}}"><h5 class="my-0">{{article.title}}</h5></a>
-    <p>{{article.tags}}</p>
+    <p>
+        {%- assign tags = article.tags | split: ", " -%}
+        {% for tag in tags %}
+        <span class="badge badge-pill badge-primary">{{tag}}</span>
+        {% endfor %}
+    </p>
 {%- endfor -%}
+<p class="text-right"><a href="#">Tous les articles <i class="fas fa-arrow-circle-right"></i></a></p>

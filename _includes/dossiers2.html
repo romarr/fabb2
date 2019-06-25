@@ -1,0 +1,18 @@
+{%- for dossier in site.data.dossiers | limit: 4 -%}
+<div class="col-3 mx-0">
+    <div class="video-item mb-2">
+            <a href="#" class="stretched-link">
+            <img src="https://img.youtube.com/vi/{{dossier.id}}/mqdefault.jpg" class="img-fluid" alt="...">
+            </a>
+            <div class="video-cap">
+                <p class="mb-1">
+                {%- assign tags = dossier.tags | split: "," -%}
+                    {% for tag in tags %}
+                    <span class="badge badge-secondary">{{tag}}</span>
+                    {% endfor %}
+                </p>                        
+                <h6 class="text-white">{{dossier.title}}</h6>
+            </div>
+    </div>
+</div>
+{%- endfor -%}

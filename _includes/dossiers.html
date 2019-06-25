@@ -1,6 +1,6 @@
 {%- for dossier in site.data.dossiers | limit: 3 -%}
 {%- if forloop.first -%}
-<div class="col-12 mx-0 px-0">
+<div class="col-12">
     <div class="video-item mb-2">
             <a href="#" class="stretched-link">
             <img src="https://img.youtube.com/vi/{{dossier.id}}/mqdefault.jpg" class="img-fluid" alt="...">
@@ -17,7 +17,7 @@
     </div>
 </div>
 {%- else -%}
-<div class="col-6 mx-0 px-0">
+<div class="col-6">
     <div class="video-item mb-2">
             <a href="#" class="stretched-link">
             <img src="https://img.youtube.com/vi/{{dossier.id}}/mqdefault.jpg" class="img-fluid" alt="...">
