@@ -1,4 +1,4 @@
-{%- for dossier in site.data.dossiers | limit: 3 -%}
+{%- for dossier in site.dossiers | limit: 3 -%}
 {%- if forloop.first -%}
 <div class="col-12">
     <div class="video-item mb-2">
@@ -7,8 +7,7 @@
             </a>
             <div class="video-cap">
                 <p class="mb-1">
-                {%- assign tags = dossier.tags | split: "," -%}
-                    {% for tag in tags %}
+                    {% for tag in dossier.tags %}
                     <span class="badge badge-secondary">{{tag}}</span>
                     {% endfor %}
                 </p>                        

@@ -13,10 +13,12 @@ ref: home
             <h3>Dossiers</h3>
             {%- for dossier in site.dossiers -%}
             <div class="media mb-3">
-                <img src="https://img.youtube.com/vi/yD4mckgWLrw/mqdefault.jpg" class="align-self-center mr-3 img-fluid"
-                    alt="...">
+                <a href="{{dossier.url}}"><img src="{{dossier.img}}" class="align-self-center mr-3 img-fluid"
+                        alt="{{dossier.title}}"></a>
                 <div class="media-body">
-                    <h5 class="mt-0">{{dossier.title}}</h5>
+                    <a href="{{dossier.url}}">
+                        <h5 class="mt-0">{{dossier.title}}</h5>
+                    </a>
                     <p>
                         {% for tag in dossier.tags %}
                         <span class="badge badge-primary">{{tag}}</span>

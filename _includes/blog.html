@@ -1,9 +1,8 @@
-{%- for article in site.data.blog -%}
+{%- for article in site.articles -%}
     <a href="{{article.url}}"><h5 class="my-0">{{article.title}}</h5></a>
     <p>
-        {%- assign tags = article.tags | split: ", " -%}
-        {% for tag in tags %}
-        <span class="badge badge-pill badge-primary">{{tag}}</span>
+        {% for tag in article.tags %}
+        <span class="badge badge-pill badge-primary">{{tag}}</span> 
         {% endfor %}
     </p>
 {%- endfor -%}

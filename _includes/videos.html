@@ -1,8 +1,8 @@
 {%- for video in site.data.videos | limit: 3 -%}
 <div class="video-item mb-2">
-        <img src="https://img.youtube.com/vi/{{video.id}}/mqdefault.jpg" class="img-fluid" alt="...">
+        <img src="https://img.youtube.com/vi/{{video.id.videoId}}/mqdefault.jpg" class="img-fluid" alt="...">
         <div class="video-cap">
-            <p>{{video.title}}</p>
+            <p>{{video.snippet.title}}</p>
         </div>
 </div>
 {%- endfor -%}
