@@ -10,17 +10,26 @@ ref: home
 
 <div id="page" class="container px-4 pt-4">
     <div class="row justify-content-around">
-        {%- for video in site.data.videos -%}
-        <div class="col-6 mb-1">
-            <div class="media">
-                <img src="https://img.youtube.com/vi/{{video.id.videoId}}/default.jpg" class="mr-3"
-                    alt="{{video.snippet.title}}">
-                <div class="media-body">
-                    <h5 class="mt-0">{{video.snippet.title}}</h5>
-                </div>
-            </div>
-
+        <div class="col">
+            <h5>Filtres</h5>
+            
         </div>
-        {%- endfor -%}
+        <div class="col-10">
+            <div class="row">
+                {%- assign videos = site.data.videos | sort: 'snippet.publishedAt' | reverse -%}
+                {%- for video in videos -%}
+                <div class="col-3">
+                    <div class="card border-light mb-3">
+                        <img src="https://img.youtube.com/vi/{{video.id.videoId}}/mqdefault.jpg" class="card-img-top"
+                            alt="{{video.snippet.title}}">
+                        <div class="card-body px-0 pt-1">
+                            <a href="https://www.youtube.com/watch?v={{video.id.videoId}}" data-toggle="tooltip" data-placement="bottom" title="{{video.snippet.title}}"><p class="video-title mb-0">{{video.snippet.title | truncate: 45 }}</p></a>
+                            <p class="video-text mb-0">{% include date.html date=video.snippet.publishedAt %}</p>
+                        </div>
+                    </div>
+                </div>
+                {%- endfor -%}
+            </div>
+        </div>
     </div>
 </div>

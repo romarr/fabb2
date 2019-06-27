@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div id="page" class="container px-4 pt-4">
+    <div class="row">
+        <div class="col">
+            <h3>{{page.title}}</h3>
+            <h4><small>{{page.subtitle}}</small></h4>
+            <div class="text-muted mb-3">
+                Publié le {% include date.html date=page.date %}
+                {% for tag in page.tags %}
+                <span class="badge badge-pill badge-primary float-right">{{tag}}</span> 
+                {% endfor %}
+            </div>
+            {{content}}
+        </div>
+    </div>
+</div>

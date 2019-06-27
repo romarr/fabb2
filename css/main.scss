@@ -17,6 +17,13 @@ body {
     background-color: $white;
 }
 
+.video-title {
+    font-weight: 900;
+}
+.video-text {
+    font-size: 0.750rem;
+}
+
 .card-img-max {
     max-height: 8rem;
     object-fit: cover;
