@@ -1,0 +1,13 @@
+{%- assign videos = site.data.videos | sample: 3 -%}
+{%- for video in videos -%}
+<a href="https://www.youtube.com/watch?v={{video.id.videoId}}">
+    <div class="video-item mb-2">
+        <img src="https://img.youtube.com/vi/{{video.id.videoId}}/mqdefault.jpg" class="img-fluid"
+            alt="{{video.snipet.title}}">
+        <div class="video-cap">
+            <p>{{video.snippet.title}}</p>
+        </div>
+    </div>
+</a>
+{%- endfor -%}
+<p class="text-right"><a class="text-light" href="#">Toutes les vidéos <i class="fas fa-arrow-circle-right"></i></a></p>

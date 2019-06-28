@@ -13,7 +13,7 @@ ref: home
             <h3>Blog</h3>
             {%- for post in site.blog -%}
             <div class="media mb-3">
-                <a href="{{post.url}}"><img src="{{post.img}}" class="align-self-center mr-3 img-fluid"
+                <a href="{{post.url}}"><img src="{{post.image}}" class="align-self-center mr-3 img-fluid"
                         alt="{{post.title}}"></a>
                 <div class="media-body">
                     <a href="{{post.url}}">
@@ -31,16 +31,16 @@ ref: home
         </div>
 
         <div class="col-3">
-            <h3 class="bg-warning text-white">Blog</h3>
-            {%- include blog.html -%}
+            <h3 class="bg-info text-white">Bons plans</h3>
+            {%- include b-deals.html -%}
         </div>
         <div class="col-9">
             <h3 class="bg-warning text-white">Comparatifs</h3>
-            {%- include comparatifs.html -%}
+            {%- include b-comparatifs.html -%}
         </div>
         <div class="col-3">
             <h3 class="bg-info text-white">Boutique</h3>
-            {%- include boutique.html -%}
+            {%- include b-boutique.html -%}
         </div>
     </div>
 </div>

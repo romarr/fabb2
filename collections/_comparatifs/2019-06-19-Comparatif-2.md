@@ -1,7 +1,7 @@
 ---
 layout: comparatif
 titre: Comparatif 1
-image: default.jpg
+image: /img/default.png
 description: Premier comparatif
 tags:
   - tag 1

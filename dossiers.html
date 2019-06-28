@@ -13,7 +13,7 @@ ref: home
             <h3>Dossiers</h3>
             {%- for dossier in site.dossiers -%}
             <div class="media mb-3">
-                <a href="{{dossier.url}}"><img src="{{dossier.img}}" class="align-self-center mr-3 img-fluid"
+                <a href="{{dossier.url}}"><img src="{{dossier.image}}" class="align-self-center mr-3 img-fluid"
                         alt="{{dossier.title}}"></a>
                 <div class="media-body">
                     <a href="{{dossier.url}}">
@@ -28,19 +28,16 @@ ref: home
                 </div>
             </div>
             {%- endfor -%}
+            <h3 class="bg-warning text-white">Comparatifs</h3>
+            {%- include b-comparatifs.html -%}
         </div>
 
         <div class="col-3">
             <h3 class="bg-warning text-white">Blog</h3>
-            {%- include blog.html -%}
-        </div>
-        <div class="col-9">
-            <h3 class="bg-warning text-white">Comparatifs</h3>
-            {%- include comparatifs.html -%}
-        </div>
-        <div class="col-3">
+            {%- include b-blog.html -%}
             <h3 class="bg-info text-white">Boutique</h3>
-            {%- include boutique.html -%}
+            {%- include b-boutique.html -%}
         </div>
+
     </div>
 </div>

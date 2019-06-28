@@ -14,31 +14,32 @@ ref: home
             <h3>Comparatifs</h3>
             {%- for comparatif in site.comparatifs -%}
             <div class="media mb-3">
-                <img src="https://img.youtube.com/vi/yD4mckgWLrw/mqdefault.jpg" class="align-self-center mr-3 img-fluid" alt="...">
+                <a href="{{comparatif.url}}"><img src="{{comparatif.image}}" class="align-self-center mr-3 img-fluid"
+                        alt="{{comparatif.title}}"></a>
                 <div class="media-body">
-                    <h5 class="mt-0">{{comparatif.titre}}</h5>
+                    <a href="{{comparatif.url}}">
+                        <h5 class="mt-0">{{comparatif.titre}}</h5>
+                    </a>
                     <p>
                         {% for tag in comparatif.tags %}
-                        <span class="badge badge-primary">{{tag}}</span> 
+                        <span class="badge badge-primary">{{tag}}</span>
                         {% endfor %}
                     </p>
                     <p>{{comparatif.description}}</p>
                 </div>
             </div>
             {%- endfor -%}
-        </div>
-        <div class="col-3">
-            <h3 class="bg-warning text-white">Blog</h3>
-            {%- include blog.html -%}
-            <h3 class="bg-info text-white">Bons plans</h3>
-            {%- include deals.html -%}
-        </div>
-        <div class="col-12">
             <hr>
             <h3 class="bg-warning text-white">Dossiers</h3>
             <div class="row">
-                {%- include dossiers2.html -%}
+                {%- include b-dossiers2.html -%}
             </div>
+        </div>
+        <div class="col-3">
+            <h3 class="bg-warning text-white">Blog</h3>
+            {%- include b-blog.html -%}
+            <h3 class="bg-info text-white">Bons plans</h3>
+            {%- include b-deals.html -%}
         </div>
     </div>
 </div>

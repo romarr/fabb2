@@ -2,27 +2,27 @@
   description: Description du produit 1
   rubrique: cat1
   prix: 10
-  img: https://placehold.it/50x50
+  image: https://placehold.it/50x50
   url: https://#
   sponso: true
 - title: Produit 2
   description: Description du produit 2
   rubrique: cat1
   prix: 10
-  img: https://placehold.it/50x50
+  image: https://placehold.it/50x50
   url: https://#
   sponso: false
 - title: Produit 3
   description: Description du produit 3
   rubrique: cat2
   prix: 10
-  img: https://placehold.it/50x50
+  image: https://placehold.it/50x50
   url: https://#
   sponso: true
 - title: Produit 4
   description: Description du produit 4
   rubrique: cat3
   prix: 10
-  img: https://placehold.it/50x50
+  image: https://placehold.it/50x50
   url: https://#
   sponso: false
