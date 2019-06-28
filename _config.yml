@@ -27,10 +27,10 @@ collections_dir: collections
 collections:
   dossiers:
     output: true
-    permalink: /articles/:title
-  articles:
+    permalink: /dossiers/:title
+  blog:
     output: true
-    permalink: /articles/:title
+    permalink: /blog/:title
   comparatifs:
     output: true
     permalink: /comparatifs/:title

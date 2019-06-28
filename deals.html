@@ -1,0 +1,51 @@
+---
+layout: default
+title: Bons plans
+menu: main
+index: 10
+lang: fr
+ref: home
+---
+
+<div id="page" class="container px-4 pt-4">
+    <div class="row justify-content-around">
+        <div class="col-2">
+            <h5>Catégories</h5>
+            {% assign rubriques = site.data.deals | map: 'rubrique' | uniq %}
+            <div id="list-example" class="list-group">
+                {%- for rubrique in rubriques -%}
+                <a class="list-group-item list-group-item-action" href="#{{rubrique}}">{{rubrique}}</a>
+                {%- endfor -%}
+            </div>
+        </div>
+        <div class="col-10">
+            {% assign rubriques = site.data.deals | map: 'rubrique' | uniq %}
+            {%- for rubrique in rubriques -%}
+            <div class="col-12">
+                <h5>{{rubrique | capitalize}}</h5>
+            </div>
+            <div class="row">
+                {%- assign deals = site.data.deals | where:'rubrique', rubrique -%}
+                {%- for deal in deals -%}
+                <div class="col-4">
+                    <div class="media">
+                        <a href="{{deal.url}}">
+                            <img src="{{deal.img}}" class="align-self-start mr-2" alt="{{deal.title}}">
+                        </a>
+                        <div class="media-body">
+                            <a href="{{deal.url}}">
+                                <h5 class="mt-0">{{deal.title}}
+                                    <span class="badge badge-pill badge-info">{{deal.prix}} €</span>
+                                </h5>
+                            </a>
+
+                            <p>{{deal.description}}</p>
+                        </div>
+                    </div>
+                </div>
+               {%- endfor -%}
+            </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>

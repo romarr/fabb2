@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Dossiers
+title: Blog
 menu: articles
-index: 1
+index: 6
 lang: fr
 ref: home
 ---
@@ -10,21 +10,21 @@ ref: home
 <div id="page" class="container px-4 pt-4">
     <div class="row justify-content-around">
         <div class="col-9">
-            <h3>Dossiers</h3>
-            {%- for dossier in site.dossiers -%}
+            <h3>Blog</h3>
+            {%- for post in site.blog -%}
             <div class="media mb-3">
-                <a href="{{dossier.url}}"><img src="{{dossier.img}}" class="align-self-center mr-3 img-fluid"
-                        alt="{{dossier.title}}"></a>
+                <a href="{{post.url}}"><img src="{{post.img}}" class="align-self-center mr-3 img-fluid"
+                        alt="{{post.title}}"></a>
                 <div class="media-body">
-                    <a href="{{dossier.url}}">
-                        <h5 class="mt-0">{{dossier.title}}</h5>
+                    <a href="{{post.url}}">
+                        <h5 class="mt-0">{{post.title}}</h5>
                     </a>
                     <p>
-                        {% for tag in dossier.tags %}
+                        {% for tag in post.tags %}
                         <span class="badge badge-primary">{{tag}}</span>
                         {% endfor %}
                     </p>
-                    <p>{{dossier.description}}</p>
+                    <p>{{post.description}}</p>
                 </div>
             </div>
             {%- endfor -%}

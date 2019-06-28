@@ -1,9 +1,10 @@
-{%- for article in site.articles -%}
-    <a href="{{article.url}}"><h5 class="my-0">{{article.title}}</h5></a>
+{%- for post in site.blog -%}
+    <a href="{{post.url}}"><h5 class="my-0">{{post.title}}</h5></a>
+    <p class="my-0">{{post.description}}</p>
     <p>
-        {% for tag in article.tags %}
+        {% for tag in post.tags %}
         <span class="badge badge-pill badge-primary">{{tag}}</span> 
         {% endfor %}
     </p>
 {%- endfor -%}
-<p class="text-right"><a href="#">Tous les articles <i class="fas fa-arrow-circle-right"></i></a></p>
+<p class="text-right"><a href="#">Tous les posts <i class="fas fa-arrow-circle-right"></i></a></p>
