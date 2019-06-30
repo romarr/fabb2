@@ -1,37 +1,38 @@
 ---
 layout: comparatif
-titre: Comparatif 1
+title: Comparatif 1
+subtitle: Sous titre du comparatif
 image: /img/default.png
 description: Premier comparatif
 tags:
   - tag 1
   - tag 2
   - tag 3
-produits:
-  - nom: Produit 1
-    prix: 10
+products:
+  - name: Produit 1
+    price: 10
     photo: default.jpg
-    positifs: Point 1, Point 2, Point 3
-    negatifs: Point A, Point B, Point C
-    note: 4
-    lien: #
-    affiliation: true
-  - nom: Produit 2
-    prix: 10
+    plus: Point 1, Point 2, Point 3
+    minus: Point A, Point B, Point C
+    score: 4
+    link: #
+    affiliated: true
+  - name: Produit 2
+    price: 10
     photo: default.jpg
-    positifs: Point 1, Point 2, Point 3
-    negatifs: Point A, Point B, Point C
-    note: 3
-    lien: #
-    affiliation: true
-  - nom: Produit 3
-    prix: 10
+    plus: Point 1, Point 2, Point 3
+    minus: Point A, Point B, Point C
+    score: 3
+    link: #
+    affiliated: true
+  - name: Produit 3
+    price: 10
     photo: default.jpg
-    positifs: Point 1, Point 2, Point 3
-    negatifs: Point A, Point B, Point C
-    note: 1
-    lien: #
-    affiliation: false
+    plus: Point 1, Point 2, Point 3
+    minus: Point A, Point B, Point C
+    score: 1
+    link: #
+    affiliated: false
 ---
 
 ### Comparatif de différents produits  

@@ -4,22 +4,49 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
   base_url: https://rsoauth.herokuapp.com
 
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 
 media_folder: "img/uploads" # Media files will be stored in the repo under images/uploads
 
 collections:
-  - name: "produits"
-    label: "Produits"
-    folder: "collections/_produits"
+  - name: "blog"
+    label: "Blog"
+    folder: "collections/_blog"
     create: true
-    slug: "{{day}}-{{second}}_{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
     fields: # The fields for each document, usually in front matter
-      - {label: "Nom", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Id", name: "pid", widget: "string"}
-      - {label: "Miniature", name: "thumb", widget: "image"}
-      - {label: "Photos", name: "photos", widget: "list", field: {label: Photo, name: photo, widget: image}}
-      - {label: "Couleurs", name: "couleurs", widget: "list", required: false}
-      - {label: "Poids", name: "poids", widget: "number"}
-      - {label: "Prix", name: "prix", widget: "string"}
-      - {label: "Dimensions", name: "dims", widget: "string"}
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Sous-titre", name: "subtitle", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Texte", name: 'body', widget: 'markdown'}
+
+  - name: "comparatifs"
+    label: "Comparatifs"
+    folder: "collections/_comparatifs"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields: # The fields for each document, usually in front matter
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Sous-titre", name: "subtitle", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Texte", name: 'body', widget: 'markdown'}
+      - label: "Produits"
+        required: true
+        name: "produits"
+        widget: "list"
+        fields:
+          - {label: "Nom", name: "name", widget: "string"}
+          - {label: "Prix", name: "price", widget: "number"}
+          - {label: "Photos", name: "photos", widget: "image"}
+          - {label: "Positifs", name: "plus", widget: "text"}
+          - {label: "Negatifs", name: "minus", widget: "list"}
+          - {label: "Note", name: "score", widget: "select", options: ["1", "2", "3", "4", "5"]}
+          - {label: "Lien", name: "link", widget: "string"}
+          - {label: "Affilié", name: "affiliated", widget: "boolean", default: false}
